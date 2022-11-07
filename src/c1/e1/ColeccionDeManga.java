@@ -44,7 +44,7 @@ public class ColeccionDeManga {
 			throw new Error("Coleccion completa");
 		}
 		this.tomos[this.cantidad++] = new Tomo(titulo, paginas);
-		this.tiempos[this.cantidad] = paginas;
+		this.tiempos[this.cantidad] = paginas + this.tiempos[this.cantidad - 1];
 	}
 
 	/*

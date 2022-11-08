@@ -8,7 +8,7 @@ public class Ejercicio4 extends EjercicioLienzo {
 	public void pintarLienzo(Color[][] lienzo, Color pincel) {
 		for (int i = 0; i < lienzo.length; i++)
 			for (int j = 0; j < lienzo.length; j++)
-				if ((i % 2 == 0 && j % 2 == 0) || (i % 2 != 0 && j % 2 != 0))
+				if ((i + j) % 2 == 0)
 					lienzo[i][j] = pincel;
 	}
 
@@ -32,7 +32,7 @@ public class Ejercicio4 extends EjercicioLienzo {
 	public void pintarLienzoV4(Color[][] lienzo, Color pincel) {
 		for (int i = 0; i < lienzo.length; i++)
 			for (int j = 0; j < lienzo.length; j++)
-				if ((i + j) % 2 == 0)
+				if ((i % 2 == 0 && j % 2 == 0) || (i % 2 != 0 && j % 2 != 0))
 					lienzo[i][j] = pincel;
 	}
 

@@ -6,7 +6,6 @@ public class Asistente {
 	private int entradas;
 
 	public Asistente(String nombre, int entradas) {
-		super();
 		this.nombre = nombre;
 		this.entradas = entradas;
 	}
@@ -15,15 +14,7 @@ public class Asistente {
 		return entradas;
 	}
 
-	public void setEntradas(int entradas) {
-		this.entradas = entradas;
-	}
-
 	public String getNombre() {
 		return nombre;
-	}
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
 	}
 }

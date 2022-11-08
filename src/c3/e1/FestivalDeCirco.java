@@ -19,6 +19,7 @@ public class FestivalDeCirco {
 
 	/*
 	 * @pre:
+	 * 
 	 * @post:
 	 */
 	public FestivalDeCirco(int capacidad, int espectaculos) {
@@ -28,7 +29,7 @@ public class FestivalDeCirco {
 		if (espectaculos < 1) {
 			throw new Error("Debe brindarse al menos un espectaculo");
 		}
-		
+
 		this.capacidad = capacidad;
 		this.espectaculos = espectaculos;
 		this.asistentes = new Asistente[capacidad];
@@ -36,9 +37,13 @@ public class FestivalDeCirco {
 
 	/*
 	 * @pre:
+	 * 
 	 * @post:
 	 */
 	public void agregarAsistente(String nombre, int entradas) {
+		if (entradas < 1) {
+			throw new Error("Al menos debe asistir a un espectaculo");
+		}
 		if (entradas > this.espectaculos) {
 			throw new Error("No puede asistir a mas espectaculos que los disponibles");
 		}
@@ -52,21 +57,27 @@ public class FestivalDeCirco {
 
 	/*
 	 * @pre:
+	 * 
 	 * @post:
 	 */
 	public int obtenerEspectaculos(String nombre) {
-		int espectaculos = -1;
-		for (Asistente asistente : asistentes) {
-			if (asistente.getNombre().equals(nombre)) {
-				espectaculos = asistente.getEntradas();
-				break; // se podria mejorar con un corte sin foreach
+		boolean encontrado = false;
+		int indiceAsistente = 0;
+		while (indiceAsistente < this.cantidadAsistentes && !encontrado) {
+			if (asistentes[indiceAsistente].getNombre().equals(nombre)) {
+				encontrado = true;
 			}
+			indiceAsistente++;
 		}
-		return espectaculos;
+		if (!encontrado) {
+			throw new Error("No se encontro el asistente");
+		}
+		return asistentes[indiceAsistente - 1].getEntradas();
 	}
 
 	/*
 	 * @pre:
+	 * 
 	 * @post:
 	 */
 	public int cantidadDeAsistentes() {
@@ -75,6 +86,7 @@ public class FestivalDeCirco {
 
 	/*
 	 * @pre:
+	 * 
 	 * @post:
 	 */
 	public int dineroRecaudado() {

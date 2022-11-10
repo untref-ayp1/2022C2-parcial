@@ -8,15 +8,27 @@ public class Ejercicio5 {
 	 * aplicado y no conceptual (las variables deben tener sentido).
 	 */
 	
+	
+//	Operacion entre variables del tipo booleano tal que se hace verdadera
+//	cuando al menos uno de sus operandos es verdadero.
+//	
+//	X | Y | X or Y
+//	V   V     V
+//	V   F     V
+//	F   V     V
+//	F   F     F
+	
 	public static void main(String[] args) {
 		int ausentes = 5;
 		int clases = 12;
-		boolean librePorFaltas = ausentes > clases * 0.75;
+		int presentes = clases - ausentes;
+		
+		boolean librePorFaltas = presentes < clases * 0.75;
 		
 		boolean apruebaTP = true;
 		
-		boolean cursaMateria = librePorFaltas || !apruebaTP;
+		boolean pierdeMateria = librePorFaltas || !apruebaTP;
 
-		System.out.println(cursaMateria);
+		System.out.println(pierdeMateria);
 	}
 }

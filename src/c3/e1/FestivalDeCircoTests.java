@@ -1,16 +1,14 @@
 package c3.e1;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
-
-import c2.e1.Estacionamiento;
 
 public class FestivalDeCircoTests {
 
 	@Test(expected = Error.class)
 	public void festivalDeCircoConCapacidadNegativa() {
-		FestivalDeCirco festivalDeCirco = new FestivalDeCirco(-1,3);
+		new FestivalDeCirco(-1,3);
 	}
 	
 	@Test(expected = Error.class)

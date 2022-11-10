@@ -1,5 +1,6 @@
 package utils;
 
+import java.awt.Color;
 import java.util.Arrays;
 
 public abstract class EjercicioLienzo {
@@ -7,22 +8,22 @@ public abstract class EjercicioLienzo {
 	
 	protected void probar(int n) {
 		Color[][] lienzo = nuevoLienzo(n);
-		pintarLienzo(lienzo, Color.NEGRO);
+		pintarLienzo(lienzo, Color.BLACK);
 		imprimir(lienzo);
 	}
 
-	protected static void imprimir(Color[][] lienzo) {
+	protected void imprimir(Color[][] lienzo) {
 		for (Color[] colors : lienzo) {
 			System.out.println(Arrays.toString(colors));
 		}
 		
 	}
 
-	protected static Color[][] nuevoLienzo(int n) {
+	public Color[][] nuevoLienzo(int n) {
 		Color[][] retorno = new Color[n][n];
 		for (int i = 0; i < retorno.length; i++) {
 			for (int j = 0; j < retorno[i].length; j++) {
-				retorno[i][j] = Color.BLANCO;
+				retorno[i][j] = Color.WHITE;
 			}
 		}
 		return retorno;

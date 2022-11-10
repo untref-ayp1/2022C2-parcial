@@ -1,6 +1,7 @@
 package c1;
 
-import utils.Color;
+import java.awt.Color;
+
 import utils.EjercicioLienzo;
 
 public class Ejercicio4 extends EjercicioLienzo {

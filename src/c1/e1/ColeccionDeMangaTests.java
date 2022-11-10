@@ -1,15 +1,13 @@
 package c1.e1;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
-
-import c2.e1.Estacionamiento;
 
 public class ColeccionDeMangaTests {
 	@Test(expected = Error.class)
 	public void ColeccionDeMangaConCapacidadNegativa() {
-		ColeccionDeManga coleccionDeManga = new ColeccionDeManga(-1);
+		new ColeccionDeManga(-1);
 	}
 	
 	@Test(expected = Error.class)

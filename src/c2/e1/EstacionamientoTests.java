@@ -1,6 +1,6 @@
 package c2.e1;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
@@ -8,7 +8,7 @@ public class EstacionamientoTests {
 
 	@Test(expected = Error.class)
 	public void estacionamientoConCapacidadNegativa() {
-		Estacionamiento estacionamiento = new Estacionamiento(-1);
+		new Estacionamiento(-1);
 	}
 
 	@Test(expected = Error.class)
